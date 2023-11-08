@@ -3,7 +3,7 @@
 @section('content')
 <section class="info_payment w-full h-full min-h-screen">
     <div class="flex justify-center">
-        <div class="w-3/4 p-4 shadow-md bg-white mt-20">
+        <div class="md:w-3/4 w-full p-4 shadow-md bg-white mt-20">
             <p class="text-2xl font-semibold capitalize">Tagihan Pembayaran</p>
 
             <div class="relative overflow-x-auto mt-5">
@@ -28,23 +28,23 @@
                     <tbody>
                         <tr class="bg-white border-b">
                             <th scope="row"
-                                class="px-6 py-4 whitespace-nowrap">
+                                class="md:px-6 px-2 md:py-4 py-2 whitespace-nowrap">
                                 <p class="font-medium text-gray-900 uppercase">{{ $detail_order->invoice }}</p>
                                 <p class="text-slate-600 font-thin mt-1 text-sm">{{ $detail_order->created_at->format('d F Y') }}</p>
                             </th>
-                            <td class="px-6 py-4">
-                                <p class="text-sm text-slate-600 capitalize">{{ $detail_order->description }}</p>
+                            <td class="md:px-6 px-2 md:py-4 py-2">
+                                <p class="text-sm text-slate-600 capitalize truncate">{{ $detail_order->description }}</p>
                             </td>
-                            <td class="px-6 py-4">
-                                <button class="py-1.5 px-4 rounded border-2 {{ $detail_order->status === 'Belum Dibayar' ? 'border-rose-400 bg-rose-100' : 'border-green-400 bg-green-100' }}">
-                                  <span class="{{ $detail_order->status === 'Belum Dibayar' ? 'text-rose-500' : 'text-green-500' }}">{{ $detail_order->status }}</span>
+                            <td class="md:px-6 px-2 md:py-4 py-2">
+                                <button class="md:py-1.5 py-0.5 md:px-4 px-1 rounded border-2 {{ $detail_order->status === 'Belum Dibayar' ? 'border-rose-400 bg-rose-100' : 'border-green-400 bg-green-100' }}">
+                                  <span class="{{ $detail_order->status === 'Belum Dibayar' ? 'text-rose-500' : 'text-green-500' }} md:text-base text-xs">{{ $detail_order->status }}</span>
                                 </button>
                             </td>
-                            <td class="px-6 py-4">
-                                <p class="font-semibold">Rp. {{ number_format($detail_order->price, 2) }}</p>
+                            <td class="md:px-6 px-2 md:py-4 py-2">
+                                <p class="font-semibold md:text-base text-sm truncate">Rp. {{ number_format($detail_order->price, 2) }}</p>
                             </td>
-                            <td class="px-6 py-4">
-                                <button class="py-1.5 px-6 rounded-md bg-blue-500 hover:bg-blue-400 text-white" id="pay-button">Bayar Sekarang</button>
+                            <td class="md:px-6 px-2 md:py-4 py-2">
+                                <button class="py-1.5 px-6 rounded-md bg-blue-500 hover:bg-blue-400 text-white md:text-base text-xs" id="pay-button">Bayar Sekarang</button>
                             </td>
                         </tr>
                     </tbody>
@@ -62,18 +62,14 @@
   snap.pay("{{ $detail_order->snap_token }}", {
       // Optional
       onSuccess: function(result){
-        axios.post("{{ Route('midtrans.cb') }}", result).then(res => {
-            console.log("RESPONSE", res)
-        }).catch(err => {
-            console.log("ERROR", err)
-        })
+         console.log('success')
       },
       onPending: function(result){
-         console.log(result, "pending")
+         console.log("pending")
       },
       // Optional
       onError: function(result){
-         console.log(result, "error")
+         console.log("error")
       }
     });
   };

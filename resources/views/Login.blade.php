@@ -7,7 +7,7 @@
     }
 </style>
 <section class="login_page w-full h-full min-h-screen flex justify-center items-center">
-    <div class="w-2/6 h-auto bg-white shadow-lg rounded-md p-4 relative">
+    <div class="lg:w-2/6 md:w-3/4 w-11/12 h-auto bg-white shadow-lg rounded-md p-4 relative">
         <div class="box_design absolute -rotate-6 -left-3 bg-gradient-to-tr from-violet-500 to-blue-primary -z-10 w-[535px] h-[285px] shadow-lg rounded-md">
         </div>
         <p class="text-center text-2xl font-bold text-[#535353]">LOGIN PPDB</p>
@@ -35,7 +35,7 @@
                 <label for="remember_me" class="text-sm text-slate-500">Ingat saya?</label>
             </div>
             <div class="btn_submit text-center mt-10">
-                <button class="py-2.5 px-16 rounded-md bg-blue-primary shadow-md text-white font-semibold">LOGIN</button>
+                <button class="md:w-auto w-full py-2.5 px-16 rounded-md bg-blue-primary shadow-md text-white font-semibold">LOGIN</button>
             </div>
         </form>
     </div>

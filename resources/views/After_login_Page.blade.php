@@ -3,8 +3,8 @@
 @section('content')
 <section class="w-full h-full min-h-screen relative">
     <div class="flex justify-center">
-        <div class="w-10/12 mt-20 mb-20 overflow-x-hidden">
-            <div class="grid grid-cols-2 gap-5">
+        <div class="md:w-10/12 w-11/12 md:mt-20 mt-5 md:mb-20 mb-10 overflow-x-hidden">
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-5">
                 <div class="flex flex-col justify-center items-center">
                     <p class="uppercase text-5xl font-semibold text-slate-600"><span class="text-rose-500">GUH</span>
                         international school</p>
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="mt-5 mb-5">
-                <p class="text-center uppercase font-semibold text-4xl text-slate-600">Kenapa Pilih <span class="text-rose-500">GUH</span> International School ?</p>
+                <p class="text-center uppercase font-semibold md:text-4xl text-2xl text-slate-600">Kenapa Pilih <span class="text-rose-500">GUH</span> International School ?</p>
             </div>
             <div class="grid grid-cols-2 gap-5">
               <div class="left_item">

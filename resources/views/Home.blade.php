@@ -3,25 +3,25 @@
 @section('content')
 <section class="main_page w-full h-full min-h-screen">
     <div class="upper_section flex justify-center">
-        <div class="w-3/4 mt-10 mb-20 overflow-x-hidden">
+        <div class="lg:w-3/4 w-11/12 mt-10 mb-20 overflow-x-hidden">
             <div class="swiper-info-home mt-5">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide w-auto">
-                      <img src="https://source.unsplash.com/random/?city,night" class="w-full max-h-96 rounded-md" />
+                      <img src="https://source.unsplash.com/random/?city,night" class="w-full md:max-h-96 max-h-48 rounded-md" />
                     </div>
                     <div class="swiper-slide w-auto">
-                       <img src="https://source.unsplash.com/random/?city,night" class="w-full max-h-96 rounded-md" />
+                       <img src="https://source.unsplash.com/random/?city,night" class="w-full md:max-h-96 max-h-48 rounded-md" />
                     </div>
                 </div>
             </div>
-            <div class="about_school mt-10">
-                <div class="grid grid-cols-2 gap-5">
-                    <div class="about mt-20">
-                        <div class="flex items-center justify-center space-x-2">
-                            <p class="text-2xl text-center">Welcome to,</p>
-                            <p class="text-2xl font-extrabold uppercase tracking-widest" style="font-family: 'Roboto Slab', serif;">Guh International School</p>
+            <div class="about_school lg:mt-10 mt-5">
+                <div class="grid lg:grid-cols-2 grid-cols-1 gap-5">
+                    <div class="about lg:mt-20 mt-5 lg:mb-0 mb-5">
+                        <div class="flex items-center justify-center md:space-x-2 space-x-1">
+                            <p class="md:text-2xl text-sm text-center">Welcome to,</p>
+                            <p class="md:text-2xl text-sm font-extrabold uppercase tracking-widest" style="font-family: 'Roboto Slab', serif;">Guh International School</p>
                         </div>
-                        <p class="mt-3 text-slate-600 text-center">Kami sangat senang Anda memilih sekolah kami untuk perjalanan
+                        <p class="mt-3 text-slate-600 text-center md:text-base text-sm">Kami sangat senang Anda memilih sekolah kami untuk perjalanan
                             pendidikan Anda. Di sini, Anda akan menemukan lingkungan yang mendukung, guru yang
                             berkomitmen, dan peluang tak terbatas untuk belajar, tumbuh, menjalin hubungan yang berarti
                             dengan sesama siswa, dan menjelajahi beragam kegiatan ekstrakurikuler yang akan membantu
@@ -36,8 +36,8 @@
     </div>
     <div class="keunggulan_section w-full bg-gradient-to-l from-blue-500 to-blue-primary p-8">
         <div class="flex justify-center">
-            <div class="w-3/4 bg-white rounded-md shadow-md shadow-blue-300 p-4">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis consectetur veniam distinctio
+            <div class="md:w-3/4 w-full bg-white rounded-md shadow-md shadow-blue-300 p-4">
+                <p class="md:text-base text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis consectetur veniam distinctio
                     accusantium architecto, error quam explicabo impedit doloribus consequuntur nesciunt? Unde ratione,
                     quas rerum placeat quidem aliquam eaque sunt optio, dolores quo quia odio velit magni accusamus
                     impedit suscipit earum temporibus quae molestias vitae consequuntur harum id. Placeat voluptatem
@@ -59,7 +59,7 @@
                         <div class="w-[40px] h-[5px] rounded bg-gradient-to-r from-red-300 via-yellow-400 to-blue-400"></div>
                     </div>
                 </div>
-                <div class="list_extra grid grid-cols-4 gap-5">
+                <div class="list_extra grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
                     <div class="basket w-full group bg-blue-200 hover:bg-blue-500 border-2 border-blue-500 transition-colors duration-200 cursor-pointer shadow-md flex justify-around items-center p-2 py-4 rounded">
                         <img src="{{ asset("img/Extra_IMG/basket-ball.png") }}" class="w-20 h-20" alt="">
                         <p class="text-slate-600 group-hover:text-white font-bold text-2xl">BASKET</p>

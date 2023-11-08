@@ -16,7 +16,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <style>
         *,html,body {
@@ -33,7 +32,7 @@
         <div class="flex justify-center">
             <div class="w-11/12 py-4 flex items-center space-x-6">
                 <img src="{{ asset('img/logo.png') }}" class="w-20 h-auto" alt="Logo Website">
-                <p class="text-3xl font-bold italic uppercase"><span class="text-rose-500">g</span>una <span class="text-rose-500">u</span>tama <span class="text-rose-500">h</span>arapan international school</p>
+                <p class="md:text-3xl text-lg font-bold italic uppercase"><span class="text-rose-500">g</span>una <span class="text-rose-500">u</span>tama <span class="text-rose-500">h</span>arapan international school</p>
             </div>
         </div>
     </header>
