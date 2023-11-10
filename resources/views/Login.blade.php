@@ -3,12 +3,13 @@
 @section('content')
 <style>
     .login_page {
-        background-image: url('{{ asset('img/bg-login.png') }}')
+        background-image: url('{{ asset('img/bg-login.png') }}');
+        z-index: 1;
     }
 </style>
-<section class="login_page w-full h-full min-h-screen flex justify-center items-center">
+<section class="login_page w-full h-full min-h-screen flex justify-center items-center relative">
     <div class="lg:w-2/6 md:w-3/4 w-11/12 h-auto bg-white shadow-lg rounded-md p-4 relative">
-        <div class="box_design absolute -rotate-6 -left-3 bg-gradient-to-tr from-violet-500 to-blue-primary -z-10 w-[535px] h-[285px] shadow-lg rounded-md">
+        <div class="box_design md:block hidden absolute -rotate-6 -left-3 bg-gradient-to-tr from-violet-500 -z-[10] to-blue-primary w-[535px] h-[285px] shadow-lg rounded-md">
         </div>
         <p class="text-center text-2xl font-bold text-[#535353]">LOGIN PPDB</p>
         <div class="border border-slate-100 mt-4 w-3/4 mx-auto"></div>
