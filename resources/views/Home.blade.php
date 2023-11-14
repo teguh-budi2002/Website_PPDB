@@ -6,11 +6,11 @@
         <div class="lg:w-3/4 w-11/12 mt-10 mb-20 overflow-x-hidden">
             <div class="swiper-info-home mt-5">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide w-auto">
-                      <img src="https://source.unsplash.com/random/?city,night" class="w-full md:max-h-96 max-h-48 rounded-md" />
+                    <div class="swiper-slide">
+                        <img src="{{ asset('img/Banner/welcome.webp') }}" class="w-full object-contain md:max-h-96 max-h-48 rounded-md" />
                     </div>
                     <div class="swiper-slide w-auto">
-                       <img src="https://source.unsplash.com/random/?city,night" class="w-full md:max-h-96 max-h-48 rounded-md" />
+                        <img src="{{ asset('img/Banner/poster-alur.webp') }}" class="w-full object-contain md:max-h-96 max-h-48 rounded-md" />
                     </div>
                 </div>
             </div>

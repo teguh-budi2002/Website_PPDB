@@ -38,10 +38,10 @@
             <div class="swiper-info-after-login mt-5">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide w-auto">
-                      <img src="{{ asset('img/test_alur_pembayaran.jpeg') }}" class="w-full h-[410px]" alt="">
+                      <img src="{{ asset('img/Banner/Alur_Waktu.webp') }}" class="w-full object-contain h-[410px]" alt="">
                     </div>
                     <div class="swiper-slide w-auto">
-                       <img src="{{ asset('img/test_banner.png') }}" class="w-full h-[410px]" alt="">
+                       <img src="{{ asset('img/Banner/payment.webp') }}" class="w-full object-contain h-[410px]" alt="">
                     </div>
                 </div>
             </div>
