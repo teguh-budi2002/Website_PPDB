@@ -11,16 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('form_admin_orders', function (Blueprint $table) {
+        Schema::create('class_semesters', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->constrained()->cascadeOnDelete();
-            $table->string('invoice');
-            $table->string('description');
-            $table->integer('price');
-            $table->enum('status', ['Belum Dibayar' , 'Sudah Lunas']);
-            $table->boolean('is_paid')->default(0);
-            $table->string('snap_token')->nullable();
-            $table->boolean('isFormEnabled')->default(0);
+            $table->string('semester');
             $table->timestamps();
         });
     }
@@ -30,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('form_admin_orders');
+        Schema::dropIfExists('class_semesters');
     }
 };

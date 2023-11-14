@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormAdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MidtransController;
@@ -25,6 +26,11 @@ Route::get('login', [PageController::class,'login'])->name('login');
 // After Login Page
 Route::get('portal', [PageController::class,'afterLoginPage'])->name('after.login')->middleware('auth');
 Route::get('info-payment', [PageController::class,'infoPaymentPage'])->name('info.payment')->middleware('auth');
+
+Route::get('portal/form-admin/step-one', [FormAdminController::class, 'createStepOne'])->name('form.step.one')->middleware('auth');
+Route::post('portal/form-admin/step-one', [FormAdminController::class, 'createStepOneProcess'])->name('form.step.one.process')->middleware('auth');
+Route::get('portal/form-admin/step-two', [FormAdminController::class, 'createStepTwo'])->name('form.step.two')->middleware('auth');
+Route::post('portal/form-admin/step-two', [FormAdminController::class, 'createStepTwoProcess'])->name('form.step.two.process')->middleware('auth');
 
 Route::prefix('auth')->group(function () { 
   Route::post('register/process', [RegisterController::class, 'register'])->name('register.process');

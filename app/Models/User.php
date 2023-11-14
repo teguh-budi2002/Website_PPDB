@@ -50,4 +50,8 @@ class User extends Authenticatable
     public function formAdministation() {
         return $this->hasOne(FormAdministation::class);
     }
+
+    public function user_class_semesters() {
+        return $this->hasMany(ClassSemester::class);
+    }
 }
