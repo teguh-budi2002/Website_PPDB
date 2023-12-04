@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('invoice');
             $table->string('description');
             $table->integer('price');
-            $table->enum('status', ['Belum Dibayar' , 'Sudah Lunas']);
+            $table->enum('status', ['Belum Dibayar' , 'Sudah Lunas', 'Pembayaran Gagal', 'Pembayaran Expired']);
             $table->boolean('is_paid')->default(0);
             $table->string('snap_token')->nullable();
-            $table->boolean('isFormEnabled')->default(0);
+            $table->boolean('isPaymentEnabled')->default(0);
             $table->timestamps();
         });
     }

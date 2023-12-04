@@ -28,6 +28,8 @@ class FormAdminController extends Controller
             return redirect()->route("form.step.two");
         } catch (\Throwable $th) {
             DB::rollBack();
+            toastr()->error($th->getMessage(), "ERROR SERVERSIDE");
+
             return redirect()->back();
         }
     }
@@ -52,6 +54,8 @@ class FormAdminController extends Controller
             return redirect()->route("form.step.two");
         } catch (\Throwable $th) {
             DB::rollBack();
+            toastr()->error($th->getMessage(), "ERROR SERVERSIDE");
+            
             return redirect()->back();
         }
     }

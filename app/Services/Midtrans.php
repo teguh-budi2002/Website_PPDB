@@ -55,9 +55,32 @@ class Midtrans {
 
   public function handleCbMidtrans($callback) {
     $invoice = $callback["order_id"];
-    FormAdminOrder::where("invoice", $invoice)->update([
-      "is_paid" => 1,
-      "status" => "Sudah Lunas",
-    ]);
+    $gross_amount = $callback["gross_amount"];
+    $status_code = $callback["status_code"];
+    $trx_status = $callback["transaction_status"];
+    $signatureKeyCallback = $callback["signature_key"];
+    $signatureKey = hash("sha512", $invoice . $status_code . $gross_amount . config('midtrans.SERVER_KEY'));
+
+    if ($signatureKeyCallback == $signatureKey) {
+      if ($trx_status === "settlement") {
+        return FormAdminOrder::where("invoice", $invoice)->update([
+          "is_paid" => 1,
+          "status" => "Sudah Lunas",
+        ]);
+      } else if($trx_status === "failure") {
+        return FormAdminOrder::where("invoice", $invoice)->update([
+          "is_paid" => 0,
+          "status" => "Pembayaran Gagal",
+        ]);
+      } else if($trx_status === "expire") {
+        return FormAdminOrder::where("invoice", $invoice)->update([
+          "is_paid" => 0,
+          "status" => "Pembayaran Expired",
+        ]);
+      }
+    } else {
+      return null;
+    }
+
   }
 }
