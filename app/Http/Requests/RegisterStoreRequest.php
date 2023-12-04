@@ -23,7 +23,7 @@ class RegisterStoreRequest extends FormRequest
     {
         return [
             'fullname'  => 'required',
-            'nik'   => 'required|max:16|unique:users,nik',
+            'nisn'   => 'required|digits_between:10,10|unique:users,nisn|numeric',
             'birth_place' => 'required',
             'birth_day' => 'required',
             'phone_number' => 'required|digits_between:10,13',
@@ -35,11 +35,12 @@ class RegisterStoreRequest extends FormRequest
 
     public function messages(): array {
         return [ 
-            'fullname.required' => 'Nama Lengkap Harus Di Isi',
-            'nik'=> [
-                'required' => 'NIK Harus Di Isi',
-                'max' => 'Format NIK Tidak Valid',
-                'unique' => 'NIK Sudah Terdaftar'
+            'fullname.required' => 'Nama Lengkap Wajib Di Isi',
+            'nisn'=> [
+                'required' => "NISN Wajib Di Isi",
+                'digits_between' => " Format NISN Salah, Silahkan Cek Lagi.",
+                'unique' => 'NISN Sudah Terdaftar',
+                'numeric' => "NISN Harus Berupa Angka."
             ],
             'birth_place.required' => 'Tempat Lahir Wajib Di Isi',
             'birth_day.required' => 'Tanggal Lahir Wajib Di Isi',

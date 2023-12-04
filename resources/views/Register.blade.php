@@ -17,66 +17,66 @@
         <form action="{{ Route('register.process') }}" method="POST">
           @csrf
           @error('fullname')
-          <div class="bg-rose-400 rounded w-full h-auto p-0.5 px-4 mb-3" role="alert">
-              <p class="text-white text-sm capitalize">{{ $message }}</p>
+          <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
+              <p class="text-rose-500 text-sm capitalize">{{ $message }}</p>
           </div>
           @enderror
           <div class="mb-3">
             <x-input type="text" name="fullname" value="{{ old('fullname') }}" labelName="Nama Lengkap" id="fullname"/>
           </div>
-          @error('nik')
-          <div class="bg-rose-400 rounded w-full h-auto p-0.5 px-4 mb-3" role="alert">
-              <p class="text-white text-sm capitalize">{{ $message }}</p>
+          @error('nisn')
+          <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
+              <p class="text-rose-500 text-sm capitalize">{{ $message }}</p>
           </div>
           @enderror
           <div class="mb-3">
-            <x-input type="text" name="nik" value="{{ old('nik') }}" labelName="NIK" id="nik"/>
+            <x-input type="text" name="nisn" value="{{ old('nisn') }}" labelName="NISN" id="nisn"/>
           </div>
           <div class="grid grid-cols-2 gap-3">
             <div class="mb-3">
               @error('birth_place')
-              <div class="bg-rose-400 rounded w-full h-auto p-0.5 px-4 mb-3" role="alert">
-                  <p class="text-white text-sm capitalize">{{ $message }}</p>
+              <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
+                  <p class="text-rose-500 text-sm capitalize">{{ $message }}</p>
               </div>
               @enderror
               <x-input type="text" name="birth_place" value="{{ old('birth_place') }}" labelName="Tempat Lahir" id="birth_place"/>
             </div>
             <div class="mb-3">
               @error('birth_day')
-              <div class="bg-rose-400 rounded w-full h-auto p-0.5 px-4 mb-3" role="alert">
-                  <p class="text-white text-sm capitalize">{{ $message }}</p>
+              <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
+                  <p class="text-rose-500 text-sm capitalize">{{ $message }}</p>
               </div>
               @enderror
               <x-input type="date" name="birth_day" labelName="Tanggal Lahir" id="birth_day"/>
             </div>
           </div>
           @error('phone_number')
-            <div class="bg-rose-400 rounded w-full h-auto p-0.5 px-4 mb-3" role="alert">
-                <p class="text-white text-sm capitalize">{{ $message }}</p>
+            <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
+                <p class="text-rose-500 text-sm capitalize">{{ $message }}</p>
             </div>
           @enderror
           <div class="mb-3">
             <x-input type="text" name="phone_number" value="{{ old('phone_number') }}" labelName="Nomor HP (Whatsapp)" id="phone_number"/>
           </div>
           @error('email')
-            <div class="bg-rose-400 rounded w-full h-auto p-0.5 px-4 mb-3" role="alert">
-                <p class="text-white text-sm capitalize">{{ $message }}</p>
+            <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
+                <p class="text-rose-500 text-sm capitalize">{{ $message }}</p>
             </div>
           @enderror
           <div class="mb-3">
             <x-input type="email" name="email" value="{{ old('email') }}" labelName="Email (@gmail.com)" id="email"/>
           </div>
           @error('password')
-            <div class="bg-rose-400 rounded w-full h-auto p-0.5 px-4 mb-3" role="alert">
-                <p class="text-white text-sm capitalize">{{ $message }}</p>
+            <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
+                <p class="text-rose-500 text-sm capitalize">{{ $message }}</p>
             </div>
           @enderror
           <div class="mb-3">
             <x-input type="password" name="password" labelName="Password" id="password"/>
           </div>
           @error('g-recaptcha-response')
-            <div class="bg-rose-400 rounded w-full h-auto p-0.5 px-4 mb-3" role="alert">
-                <p class="text-white text-sm capitalize">{{ $message }}</p>
+            <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
+                <p class="text-rose-500 text-sm capitalize">{{ $message }}</p>
             </div>
           @enderror
           <div class="g-recaptcha mt-4 z-50 relative" data-sitekey="{{ config("recaptcha.KEY") }}"></div>

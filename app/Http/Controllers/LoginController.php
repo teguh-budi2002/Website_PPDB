@@ -9,10 +9,14 @@ class LoginController extends Controller
 {
     public function login(Request $request) {
         $validation  = $request->validate([ 
-            "nik" => "required|max:16",
+            "nisn" => "required|digits_between:10,10|numeric",
             "password" => "required",
         ], [
-            "nik.required" => "Masukkan NIK Yang Sudah Terdaftar Untuk Login",
+            "nisn" => [
+                'required' => "Masukkan NISN Yang Sudah Terdaftar Untuk Login",
+                'digits_between' => "Format NISN Salah, Silahkan Cek Lagi.",
+                'numeric' => "NISN Harus Berupa Angka."
+            ],
             "password.required" => "Masukkan Password Yang Sudah Terdaftar Untuk Login",
         ]);
 

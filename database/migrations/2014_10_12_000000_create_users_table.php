@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('role_id')->references('id')->on('roles')->constrained()->cascadeOnDelete();
             $table->string('fullname');
-            $table->string('nik', 16);
+            $table->string('nisn', 10);
             $table->string('birth_place');
             $table->date('birth_day');
             $table->string('phone_number', 13);

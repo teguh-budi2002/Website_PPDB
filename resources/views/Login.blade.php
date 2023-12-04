@@ -16,16 +16,16 @@
         <form action="{{ Route('login.process') }}" method="POST">
             @csrf
             <div class="mb-3 mt-5">
-            @error('nik')
-              <div class="bg-rose-400 rounded w-full h-auto p-0.5 px-4 mb-3" role="alert">
+            @error('nisn')
+              <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
                   <p class="text-white text-sm capitalize">{{ $message }}</p>
               </div>
             @enderror
-                <x-input type="text" name="nik" id="nik" value="{{ old('nik') }}" labelName="Masukkan NIK Anda"/>
+                <x-input type="text" name="nisn" id="nisn" value="{{ old('nisn') }}" labelName="Masukkan NISN Anda"/>
             </div>
             <div class="mb-3">
             @error('password')
-              <div class="bg-rose-400 rounded w-full h-auto p-0.5 px-4 mb-3" role="alert">
+              <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
                   <p class="text-white text-sm capitalize">{{ $message }}</p>
               </div>
             @enderror
