@@ -6,14 +6,18 @@
         <div class="md:w-10/12 w-11/12 md:mt-20 mt-5 md:mb-20 mb-10 overflow-x-hidden">
             <div class="grid md:grid-cols-2 grid-cols-1 gap-5">
                 <div class="flex flex-col justify-center items-center">
-                    <p class="uppercase text-5xl font-semibold text-slate-600"><span class="text-rose-500">GUH</span>
+                    <p class="uppercase md:text-5xl text-4xl md:text-start text-center font-semibold text-slate-600"><span class="text-rose-500">GUH</span>
                         international school</p>
                     <p class="text-sm mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, et neque.
                         Eligendi ex doloribus deserunt blanditiis fuga. Odio non voluptates, reiciendis numquam alias
                         velit ea eligendi dolorem accusamus dignissimos sit.</p>
                     @if (isset($is_payment_admin_paid) && $is_payment_admin_paid->is_paid)
-                      <a href="" class="py-2.5 px-6 rounded-md border-2 border-blue-primary transition-colors duration-150 hover:bg-blue-primary text-blue-primary hover:text-white mt-5 font-semibold">DAFTAR
+                      @if ($is_user_finish_input_data_student >= 5)
+                      <a href="{{ Route('form.step.one') }}" class="py-2.5 px-6 rounded-md border-2 border-green-500 transition-colors duration-150 hover:bg-green-500 text-green-500 hover:text-white mt-5 font-semibold">Lihat Hasil Pengumuman</a>
+                      @else
+                      <a href="{{ Route('form.step.one') }}" class="py-2.5 px-6 rounded-md border-2 border-blue-primary transition-colors duration-150 hover:bg-blue-primary text-blue-primary hover:text-white mt-5 font-semibold">DAFTAR
                           SEKARANG</a>
+                      @endif
                     @else
                       <button class="py-2.5 px-6 rounded-md border-2 border-blue-primary transition-colors duration-150 hover:bg-blue-primary text-blue-primary hover:text-white mt-5 font-semibold" onclick="my_modal_2.showModal()">DAFTAR SEKARANG</button>
                       <dialog id="my_modal_2" class="modal">

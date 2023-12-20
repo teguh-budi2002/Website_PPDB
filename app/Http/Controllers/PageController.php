@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClassSemester;
 use App\Models\FormAdminOrder;
 use App\Services\Midtrans;
 use Illuminate\Http\Request;
@@ -22,8 +23,13 @@ class PageController extends Controller
     }
 
     public function afterLoginPage() {
-        $isPaymentAdminPaid = FormAdminOrder::select("is_paid")->where('user_id', Auth::id())->first(); 
-        return view('After_Login_page', ['is_payment_admin_paid' => $isPaymentAdminPaid]);
+        $isPaymentAdminPaid = FormAdminOrder::select("is_paid")->where('user_id', Auth::id())->first();
+        $isUserFinishInputDataStudentSchool = ClassSemester::where('user_id', Auth::id())->count();
+        // dd($isUserFinishInputDataStudentSchool);
+        return view('After_Login_Page', [
+            'is_payment_admin_paid' => $isPaymentAdminPaid,
+            'is_user_finish_input_data_student' => $isUserFinishInputDataStudentSchool
+        ]);
     }
 
     public function infoPaymentPage() {

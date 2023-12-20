@@ -18,7 +18,7 @@
             <div class="mb-3 mt-5">
             @error('nisn')
               <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
-                  <p class="text-white text-sm capitalize">{{ $message }}</p>
+                  <p class="text-rose-500 text-sm capitalize">{{ $message }}</p>
               </div>
             @enderror
                 <x-input type="text" name="nisn" id="nisn" value="{{ old('nisn') }}" labelName="Masukkan NISN Anda"/>
@@ -26,7 +26,7 @@
             <div class="mb-3">
             @error('password')
               <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3" role="alert">
-                  <p class="text-white text-sm capitalize">{{ $message }}</p>
+                  <p class="text-rose-500 text-sm capitalize">{{ $message }}</p>
               </div>
             @enderror
                 <x-input type="password" name="password" id="password" labelName="Masukkan Password"/>

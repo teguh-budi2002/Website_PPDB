@@ -1,7 +1,7 @@
 @extends('app')
-@section('title', 'Step Pertama')
+@section('title', 'Step Ke Tiga')
 @section('content')
-<div class="step_one_form w-full h-full min-h-screen">
+<div class="step_three_form w-full h-full min-h-screen">
     <div class="flex justify-center">
         <div class="w-3/5 bg-white shadow-md p-4 rounded mt-20">
           @if ($errors->any())
@@ -9,12 +9,12 @@
                   <p>{{ $err }}</p>
               @endforeach
           @endif
-            <form action="{{ Route('form.step.one.process') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ Route('form.step.three.process') }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="smt_choice">
                 <label for="class_smt" class="block text-sm mb-2">Semester</label>
                 <select class="w-full select select-sm" name="class_semester_id" id="class_smt">
-                  <option value="smt_1">Semester 1</option>
+                  <option value="smt_1">Semester 3</option>
                 </select>
               </div>
               <div class="science mt-5">
@@ -54,7 +54,7 @@
                 <x-input type="text" name="mathematics" id="mathematics" value="{{ old('mathematics') }}" labelName="Masukkan Nilai MTK Pada Semester Yang Sudah Dipilih" />
               </div>
               <div class="student_proof_of_grade_report mt-5">
-                <label for="student_proof_of_grade_report" class="block text-sm mb-2">Bukti Nilai SMT 1</label>
+                <label for="student_proof_of_grade_report" class="block text-sm mb-2">Bukti Nilai SMT 3</label>
                  @error('student_proof_of_grade_report')
                 <div class="bg-rose-50 border-2 border-solid border-rose-500 rounded w-full h-auto p-1 px-4 mb-3">
                   <p class="text-rose-500 text-sm capitalize">{{ $message }}</p>
@@ -79,10 +79,10 @@
                 <li class="step step-neutral">
                   <span class="text-sm">Step 1</span>
                 </li>
-                <li class="step">
+                <li class="step step-neutral">
                   <span class="text-sm">Step 2</span>
                 </li>
-                <li class="step">
+                <li class="step step-neutral">
                   <span class="text-sm">Step 3</span>
                 </li>
                 <li class="step">
@@ -94,5 +94,5 @@
             </ul>
         </div>
     </div>
-</div>
+</div> 
 @endsection

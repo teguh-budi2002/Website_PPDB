@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer('indonesian_language_lesson');
             $table->integer('english_language_lesson');
             $table->integer('mathematics');
+            $table->string('student_proof_of_grade_report');
+            $table->integer('avg_value_student')->nullable();
             $table->timestamps();
         });
     }

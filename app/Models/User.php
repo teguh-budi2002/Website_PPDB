@@ -48,7 +48,7 @@ class User extends Authenticatable
     }
 
     public function formAdministation() {
-        return $this->hasOne(FormAdministation::class);
+        return $this->hasOne(FormAdminOrder::class);
     }
 
     public function user_class_semesters() {
