@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ClassSemester;
 use App\Models\DataStudentSchool;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -135,6 +136,16 @@ class FormAdminController extends Controller
             $validation['class_semester_id'] = $createSemester->id;
             $validation['student_proof_of_grade_report'] = $this->storeImageGradeReportStudent($request->file('student_proof_of_grade_report'));
             $data_student = DataStudentSchool::create($validation);
+
+            // Counting All Data Students
+            $calculateStudentScore = ClassSemester::leftJoin(DB::raw('(SELECT class_semester_id, SUM(science + indonesian_language_lesson + english_language_lesson + mathematics) as total_student_score FROM data_student_schools GROUP BY class_semester_id) AS statistics'), function($join) {
+                $join->on('statistics.class_semester_id', '=', 'class_semesters.id');
+            })->where('user_id', Auth::user()->id)->get();
+            $averageScoreStudent = $calculateStudentScore->sum('total_student_score') / 20;
+            $savedAvgScore = User::where('id', Auth::user()->id)->update([
+                'avg_value_student' => $averageScoreStudent
+            ]);
+
             DB::commit();
 
             toastr()->success("Nilai anda berhasil disimpan, harap tunggu untuk proses validasi.", "NIlAI BERHASIL DISIMPAN");

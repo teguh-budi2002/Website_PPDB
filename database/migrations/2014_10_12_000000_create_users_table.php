@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('phone_number', 13);
             $table->string('email')->unique();
             $table->string('password');
+            $table->float('avg_value_student')->nullable();
+            $table->boolean('isUserVerfied')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

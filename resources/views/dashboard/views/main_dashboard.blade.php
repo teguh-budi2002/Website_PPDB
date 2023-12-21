@@ -19,7 +19,7 @@
                         <p class="mb-0 font-sans font-semibold leading-normal text-sm">Siswa Yang
                             Terdaftar</p>
                         <h5 class="mb-0 font-bold">
-                            200
+                            {{ App\Models\User::count() }}
                         </h5>
                     </div>
                 </div>

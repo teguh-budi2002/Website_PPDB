@@ -10,7 +10,7 @@
 <h6 class="mb-0 font-bold capitalize">Management Data Students</h6>
 @endsection
 @section('content')
-<div class="w-full h-full min-h-screen">
+<div class="w-full h-full min-h-[600px]">
   <div class="flex flex-wrap -mx-3">
       <div class="flex-none w-full max-w-full px-3">
           <div
