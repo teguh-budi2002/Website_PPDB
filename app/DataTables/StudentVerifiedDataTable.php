@@ -48,7 +48,8 @@ class StudentVerifiedDataTable extends DataTable
     {
         return $model->newQuery()
                     ->where('isUserVerfied', 1)
-                    ->orderByDesc("avg_value_student");
+                    ->orderByDesc("avg_value_student")
+                    ->take(100);
     }
 
     /**

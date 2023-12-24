@@ -55,14 +55,15 @@
             <div class="grid grid-cols-2 gap-5">
               <div class="left_item">
                 <div class="first_reason space-y-2 text-center">
-                  <p class="capitalize font-semibold text-xl text-slate-600">fasilitas lengkap</p>
-                  <p class="text-slate-600 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque velit beatae culpa perspiciatis sequi odio enim minima animi dolorem, laboriosam earum, debitis sint magni nemo provident quis, maiores numquam! Dolores?</p>
+                  <p class="capitalize font-semibold text-xl text-slate-600">KOMITMEN</p>
+                  <p class="text-slate-600 text-sm">GUH INTERNATIONAL SCHOOL memiliki komitmen pada Pendidikan yang unggul. Kami bertujuan menghadirkan pendidikan berkualitas tinggi yang relevan dan kontekstual dengan apa yang dibutuhkan siswa untuk sukses dalam kehidupan nyata.
+</p>
                 </div>
               </div>
               <div class="right_item">
                 <div class="second_reason space-y-2 text-center">
-                  <p class="capitalize font-semibold text-xl text-slate-600">Pelayanan ramah</p>
-                  <p class="text-slate-600 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque velit beatae culpa perspiciatis sequi odio enim minima animi dolorem, laboriosam earum, debitis sint magni nemo provident quis, maiores numquam! Dolores?</p>
+                  <p class="capitalize font-semibold text-xl text-slate-600">KONSISTENSI</p>
+                  <p class="text-slate-600 text-sm">Kami memiliki praktik-praktik dan sistem pembelajaran terbaik untuk memastikan siswa kami menerima pendidikan yang berkualitas tinggi secara konsisten di setiap tahapan.</p>
                 </div>
               </div>
             </div>

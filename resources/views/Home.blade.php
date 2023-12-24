@@ -37,15 +37,7 @@
     <div class="keunggulan_section w-full bg-gradient-to-l from-blue-500 to-blue-primary p-8">
         <div class="flex justify-center">
             <div class="md:w-3/4 w-full bg-white rounded-md shadow-md shadow-blue-300 p-4">
-                <p class="md:text-base text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis consectetur veniam distinctio
-                    accusantium architecto, error quam explicabo impedit doloribus consequuntur nesciunt? Unde ratione,
-                    quas rerum placeat quidem aliquam eaque sunt optio, dolores quo quia odio velit magni accusamus
-                    impedit suscipit earum temporibus quae molestias vitae consequuntur harum id. Placeat voluptatem
-                    fugiat eveniet perferendis et? Natus nam sit quibusdam fuga architecto, unde aut, repudiandae,
-                    possimus sed deleniti assumenda veritatis eaque nulla distinctio et autem adipisci. Animi
-                    exercitationem sed, quia dignissimos sit tempora cupiditate aut eveniet ducimus nostrum pariatur
-                    aliquid minus reprehenderit iure inventore nam laboriosam similique laborum sequi libero. Incidunt,
-                    sapiente.</p>
+                <p class="md:text-xl text-base font-semibold uppercase">Guna Utama Harapan International School<span class="md:text-base text-sm font-normal normal-case"> merupakan sebuah institusi pendidikan yang telah terakreditasi dengan nilai A untuk seluruh jenjang akademiknya. Terletak di kota Sidoarjo, Guna Utama Harapan International School telah menunjukkan komitmennya dalam memberikan pendidikan berkualitas untuk anak-anak Indonesia. Dengan didukung oleh kurikulum yang inovatif dan guru-guru yang berpengalaman serta fasilitas yang tersedia, Guna Utama Harapan International School siap membantu para siswa dalam mengembangkan potensi mereka dan mencapai keberhasilan di masa depan.</span></p>
             </div>
         </div>
     </div>
