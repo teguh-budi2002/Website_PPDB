@@ -69,7 +69,7 @@
                                 @endforeach
                                 <td
                                     class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                    <a href="" class="text-xs font-semibold leading-tight bg-gradient-to-tl from-blue-600 to-sky-400 hover:from-sky-400 hover:to-blue-600 transition duration-200 text-white p-2 rounded-md">Validasi Nilai Siswa</a>
+                                    <a href="{{ Route('validate_student_score', ['studentId' => $student->id]) }}" class="text-xs font-semibold leading-tight bg-gradient-to-tl from-blue-600 to-sky-400 hover:from-sky-400 hover:to-blue-600 transition duration-200 text-white p-2 rounded-md">Validasi Nilai Siswa</a>
                                 </td>
                             </tr>
                             @endforeach

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->float('avg_value_student')->nullable();
-            $table->boolean('isUserVerfied')->default(0);
+            $table->boolean('isUserVerfied')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', "WELCOME")
+@section('title', "Info Pembayaran Formulir Administrasi")
 @section('content')
 <section class="info_payment w-full h-full min-h-screen">
     <div class="flex justify-center">
@@ -51,6 +51,7 @@
                 </table>
             </div>
 
+            <p class="mt-4 text-sm">DIkarenakan masih tahap development, anda bisa melakukan simulasi pembayaran di link berikut. <a href="https://simulator.sandbox.midtrans.com/" target="_blank" class="text-blue-500 hover:text-blue-400">Klik Disini</a></p>
         </div>
     </div>
 </section>

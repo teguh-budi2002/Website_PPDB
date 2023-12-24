@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\StudentVerifiedDataTable;
 use App\Models\ClassSemester;
 use App\Models\FormAdminOrder;
 use App\Services\Midtrans;
@@ -43,5 +44,9 @@ class PageController extends Controller
             }
         } 
         return view('Info_Payment_Page', ['detail_order'=> $detailOrder]);
+    }
+
+    public function announcementOfSelectionResults(StudentVerifiedDataTable $dataTable) {
+        return $dataTable->render('AnnouncementOfSelectionResult');
     }
 }
