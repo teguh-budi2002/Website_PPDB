@@ -17,4 +17,15 @@ class LogoutController extends Controller
         toastr()->error("Logout Successfully", "LOGOUT");
         return redirect('/');
     }
+
+    public function logoutDashboard(Request $request) {
+        Auth::logout();
+ 
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+        
+        toastr()->error("Logout Successfully", "LOGOUT");
+        return redirect('login-dashboard');
+    }
 }

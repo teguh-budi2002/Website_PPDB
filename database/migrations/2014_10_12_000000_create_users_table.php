@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nisn', 10);
             $table->string('birth_place');
             $table->date('birth_day');
-            $table->string('phone_number', 13);
+            $table->string('phone_number', 22);
             $table->string('email')->unique();
             $table->string('password');
             $table->float('avg_value_student')->nullable();

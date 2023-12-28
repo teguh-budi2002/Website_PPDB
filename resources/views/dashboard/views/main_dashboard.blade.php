@@ -19,7 +19,7 @@
                         <p class="mb-0 font-sans font-semibold leading-normal text-sm">Siswa Yang
                             Terdaftar PPDB</p>
                         <h5 class="mb-0 font-bold">
-                            {{ App\Models\User::count() }}
+                            {{ App\Models\User::where('role_id', 2)->count() }}
                         </h5>
                     </div>
                 </div>

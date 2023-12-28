@@ -24,10 +24,14 @@ class PageController extends Controller
         return view("Login");
     }
 
+    public function loginDashboard() { 
+        return view("dashboard.views.login_dashboard");
+    }
+
     public function afterLoginPage() {
         $isPaymentAdminPaid = FormAdminOrder::select("is_paid")->where('user_id', Auth::id())->first();
         $isUserFinishInputDataStudentSchool = ClassSemester::where('user_id', Auth::id())->count();
-        $isFormEnabled = Form::select('form_type', 'isFormEnabled', 'formEnabledUntil')->get();
+        $isFormEnabled = Form::select('form_type', 'isFormEnabled')->get();
 
         return view('After_Login_Page', [
             'is_payment_admin_paid' => $isPaymentAdminPaid,

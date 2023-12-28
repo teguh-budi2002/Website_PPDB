@@ -27,7 +27,7 @@ Route::get('register', [PageController::class,'register'])->name('register');
 Route::get('login', [PageController::class,'login'])->name('login');
 Route::post('register/process', [RegisterController::class, 'register'])->name('register.process');
 Route::post('login/process', [LoginController::class, 'login'])->name('login.process');
-
+;
 Route::middleware('auth')->group( function() {
   Route::post('logout/process', [LogoutController::class, 'logout'])->name('logout.process');
 
@@ -49,7 +49,12 @@ Route::middleware('auth')->group( function() {
   Route::post('portal/form-admin/step-five', [FormAdminController::class, 'createStepFiveProcess'])->name('form.step.five.process');
 });
 
-Route::prefix('dashboard')->group(function () { 
+Route::get('login-dashboard', [PageController::class,'loginDashboard'])->name('login-dashboard');
+Route::post('login-dashboard/process', [LoginController::class, 'loginDashboard'])->name('login.db.process');
+
+Route::middleware('isUserCanAccessDashboard')->prefix('dashboard')->group(function () {
+  Route::post('logout-dashboard/process', [LogoutController::class, 'logoutDashboard'])->name('logout.db.process');
+
   Route::get('/', [DashboardController::class, 'index'])->name('db.index');
 
   // Management Data Students

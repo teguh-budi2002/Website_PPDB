@@ -49,11 +49,16 @@
                 <div class="flex justify-end items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
                     <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
                         <li class="flex items-center">
-                            <a href="../pages/sign-in.html"
-                                class="block px-0 py-2 font-semibold transition-all ease-nav-brand text-sm text-slate-500">
-                                <i class="fa fa-user sm:mr-1"></i>
-                                <span class="hidden sm:inline">Sign In</span>
-                            </a>
+                            <form action="{{ Route('logout.db.process') }}" method="POST">
+                                @csrf
+                                <button type="submit"
+                                    class="px-0 py-2 font-semibold transition-all ease-nav-brand text-sm text-slate-500 flex items-center space-x-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                                    </svg>
+                                    <span class="hidden sm:inline">Log Out</span>
+                                </button>
+                            </form>
                         </li>
                         <li class="flex items-center pl-4 xl:hidden">
                             <a href="javascript:;"
