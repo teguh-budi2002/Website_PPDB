@@ -24,12 +24,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class,'index'])->name('home');
 Route::get('register', [PageController::class,'register'])->name('register');
 Route::get('login', [PageController::class,'login'])->name('login');
-
+Route::post('register/process', [RegisterController::class, 'register'])->name('register.process');
+Route::post('login/process', [LoginController::class, 'login'])->name('login.process');
 
 Route::middleware('auth')->group( function() {
+  Route::post('logout/process', [LogoutController::class, 'logout'])->name('logout.process');
+
   // After Login Page
   Route::get('portal', [PageController::class,'afterLoginPage'])->name('after.login');
-  Route::get('info-pembayaran-form-admin', [PageController::class,'infoPaymentPage'])->name('info.payment');
+  Route::get('info-pembayaran-form-admin', [PageController::class,'infoPaymentPage'])->name('info.payment')->middleware('isUserCanPayFormAdmin');
   Route::get('pengumuman-hasil-seleksi', [PageController::class,'announcementOfSelectionResults'])->name('selection.results');
   Route::get('print-pdf', [StudentController::class, 'downloadPdfStudent'])->name('print.pdf');
   
@@ -45,12 +48,6 @@ Route::middleware('auth')->group( function() {
   Route::post('portal/form-admin/step-five', [FormAdminController::class, 'createStepFiveProcess'])->name('form.step.five.process');
 });
 
-Route::prefix('auth')->group(function () { 
-  Route::post('register/process', [RegisterController::class, 'register'])->name('register.process');
-  Route::post('login/process', [LoginController::class, 'login'])->name('login.process');
-  Route::post('logout/process', [LogoutController::class, 'logout'])->name('logout.process');
-});
-
 Route::prefix('dashboard')->group(function () { 
   Route::get('/', [DashboardController::class, 'index'])->name('db.index');
 
@@ -60,6 +57,8 @@ Route::prefix('dashboard')->group(function () {
 
   Route::patch('manage-data-students/approve-student/{studentId}', [StudentController::class, 'approvedStudent'])->name('approve_student');
   Route::patch('manage-data-students/declined-student/{studentId}', [StudentController::class, 'declinedStudent'])->name('declined_student');
+
+  Route::get('settings', [DashboardController::class, 'manage_setting_forms'])->name('manage_settings');
 });
 
 Route::post('callback-midtrans', [MidtransController::class, 'handleCB'])->name('midtrans.cb');

@@ -8,18 +8,51 @@
                 <div class="flex flex-col justify-center items-center">
                     <p class="uppercase md:text-5xl text-4xl md:text-start text-center font-semibold text-slate-600"><span class="text-rose-500">GUH</span>
                         international school</p>
-                    <p class="text-sm mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, et neque.
-                        Eligendi ex doloribus deserunt blanditiis fuga. Odio non voluptates, reiciendis numquam alias
-                        velit ea eligendi dolorem accusamus dignissimos sit.</p>
+                    <p class="md:text-lg text-md text-center mt-5">Segera daftarkan diri anda dan bergabung dalam keluarga GUH International School untuk menggapai cita di masa depan</p>
+                    @php
+                       $formAdministration = null; 
+                       $formAnnouncement = null; 
+                       $formDataStudent = null;
+                       
+                       if (isset($is_form_enabled)) {
+                         foreach ($is_form_enabled as $form) {
+                          if ($form->form_type == 'FormAdministration') {
+                            $formAdministration = $form->isFormEnabled;
+                          }
+  
+                          if ($form->form_type == 'FormDataStudent') {
+                            $formDataStudent = $form->isFormEnabled;
+                          }
+  
+                          if ($form->form_type == 'AnnouncementSelection') {
+                            $formAnnouncment = $form->isFormEnabled;
+                          }
+                        }
+                       }
+                    @endphp
                     @if (isset($is_payment_admin_paid) && $is_payment_admin_paid->is_paid)
                       @if ($is_user_finish_input_data_student >= 5)
-                      <a href="{{ Route('form.step.one') }}" class="py-2.5 px-6 rounded-md border-2 border-green-500 transition-colors duration-150 hover:bg-green-500 text-green-500 hover:text-white mt-5 font-semibold">Lihat Hasil Pengumuman</a>
+                        @if ($formAnnouncment)
+                          <a href="{{ Route('selection.results') }}" class="py-2.5 px-6 rounded-md border-2 border-green-500 transition-colors duration-150 hover:bg-green-500 text-green-500 hover:text-white mt-5 font-semibold">Lihat Hasil Pengumuman</a>
+                        @else
+                          <button type="button" class="py-2.5 px-6 rounded-md border-2 border-rose-500 transition-colors duration-150 hover:bg-rose-400 text-rose-500 hover:text-white mt-5 font-semibold">Pengumuman Telah Ditutup</button>  
+                        @endif
                       @else
-                      <a href="{{ Route('form.step.one') }}" class="py-2.5 px-6 rounded-md border-2 border-blue-primary transition-colors duration-150 hover:bg-blue-primary text-blue-primary hover:text-white mt-5 font-semibold">DAFTAR
-                          SEKARANG</a>
+                       @if ($formDataStudent)
+                        <a href="{{ Route('form.step.one') }}" class="py-2.5 px-6 rounded-md border-2 border-blue-primary transition-colors duration-150 hover:bg-blue-primary text-blue-primary hover:text-white mt-5 font-semibold">DAFTAR
+                            SEKARANG</a>
+                       @else
+                        <button type="button" class="py-2.5 px-6 rounded-md border-2 border-rose-500 transition-colors duration-150 hover:bg-rose-400 text-rose-500 hover:text-white mt-5 font-semibold">Form Pendaftaran Telah Ditutup</button>
+                       @endif
                       @endif
                     @else
-                      <button class="py-2.5 px-6 rounded-md border-2 border-blue-primary transition-colors duration-150 hover:bg-blue-primary text-blue-primary hover:text-white mt-5 font-semibold" onclick="my_modal_2.showModal()">DAFTAR SEKARANG</button>
+                      @if (isset($is_form_enabled) && $is_form_enabled)
+                        @if ($formAdministration === 1)
+                          <button class="py-2.5 px-6 rounded-md border-2 border-blue-primary transition-colors duration-150 hover:bg-blue-primary text-blue-primary hover:text-white mt-5 font-semibold" onclick="my_modal_2.showModal()">DAFTAR SEKARANG</button>
+                        @else
+                          <button type="button" class="py-2.5 px-6 rounded-md border-2 border-rose-500 transition-colors duration-150 hover:bg-rose-400 text-rose-500 hover:text-white mt-5 font-semibold">Form Adminisitrasi Telah Ditutup</button>
+                        @endif
+                      @endif
                       <dialog id="my_modal_2" class="modal">
                         <div class="modal-box">
                           <h3 class="font-bold text-lg text-rose-400">PERHATIAN</h3>

@@ -27,4 +27,9 @@ class DashboardController extends Controller
             'data_student' => $getStudent
         ]);
     }
+
+    
+    public function manage_setting_forms() {
+        return view('dashboard.views.manage_setting_forms');
+    }
 }

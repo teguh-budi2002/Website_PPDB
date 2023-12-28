@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DataTables\StudentVerifiedDataTable;
 use App\Models\ClassSemester;
+use App\Models\Form;
 use App\Models\FormAdminOrder;
 use App\Services\Midtrans;
 use Illuminate\Http\Request;
@@ -26,10 +27,12 @@ class PageController extends Controller
     public function afterLoginPage() {
         $isPaymentAdminPaid = FormAdminOrder::select("is_paid")->where('user_id', Auth::id())->first();
         $isUserFinishInputDataStudentSchool = ClassSemester::where('user_id', Auth::id())->count();
-        // dd($isUserFinishInputDataStudentSchool);
+        $isFormEnabled = Form::select('form_type', 'isFormEnabled', 'formEnabledUntil')->get();
+
         return view('After_Login_Page', [
             'is_payment_admin_paid' => $isPaymentAdminPaid,
-            'is_user_finish_input_data_student' => $isUserFinishInputDataStudentSchool
+            'is_user_finish_input_data_student' => $isUserFinishInputDataStudentSchool,
+            'is_form_enabled' => $isFormEnabled
         ]);
     }
 
