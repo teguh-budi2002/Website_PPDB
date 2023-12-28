@@ -11,13 +11,13 @@
 @endsection
 @section('content')
 <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
-    <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
-        <div class="flex-auto p-4">
+    <div class="relative flex flex-col min-w-0 break-words bg-clip-border">
+        <div class="flex-auto p-4 bg-white shadow-md rounded-2xl">
             <div class="flex flex-row -mx-3">
                 <div class="flex-none w-2/3 max-w-full px-3">
                     <div>
                         <p class="mb-0 font-sans font-semibold leading-normal text-sm">Siswa Yang
-                            Terdaftar</p>
+                            Terdaftar PPDB</p>
                         <h5 class="mb-0 font-bold">
                             {{ App\Models\User::count() }}
                         </h5>
@@ -37,7 +37,7 @@
 <div class="flex flex-wrap mt-6 -mx-3">
     <div class="w-full max-w-full px-3 mt-0 mb-6 lg:mb-0 lg:flex-none">
         <div
-            class="border-black/12.5 shadow-soft-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
+            class="border-black/12.5 relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white shadow-soft-xl bg-clip-border">
             <div class="flex-auto p-4">
                 <div class="py-4 pr-1 mb-4 bg-gradient-to-tl from-gray-900 to-slate-800 rounded-xl">
                     <div>

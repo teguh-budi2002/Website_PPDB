@@ -151,6 +151,7 @@
         </div>
     </div>
 </body>
+@stack('dashboard-js')
 <!-- github button -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- main script file  -->

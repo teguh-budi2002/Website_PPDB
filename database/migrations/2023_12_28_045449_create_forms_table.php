@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->enum('form_type', ['FormAdministration', 'FormDataStudent', 'AnnouncementSelection']);
             $table->boolean('isFormEnabled')->default(true);
-            $table->date('formEnabledUntil');
             $table->timestamps();
         });
     }

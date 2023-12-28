@@ -28,7 +28,7 @@ class LoginController extends Controller
             return redirect()->intended('portal');
         }
 
-        toastr()->error('User Not Found', 'Login Failed');
+        toastr()->error('Pengguna Tidak Ditemukan', 'Login Failed');
         return redirect()->back();
     }
 }

@@ -19,6 +19,7 @@
                   <p class="font-bold">Data Siswa Yang Sudah Submit Nilai</p>
               </div>
               <div class="flex-auto px-0 pt-0 pb-2">
+                @if ($data_students->isNotEmpty())
                   <div class="p-0 overflow-x-auto">
                       <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
                           <thead class="align-bottom">
@@ -76,6 +77,11 @@
                           </tbody>
                       </table>
                   </div>
+                @else
+                  <div class="empty_data p-4 bg-rose-100 border-2 border-rose-500 rounded mt-8">
+                      <p class="text-rose-500 text-center">Belum Ada Siswa Yang Menginputkan Data Nilai</p>
+                  </div>
+                @endif
               </div>
           </div>
       </div>

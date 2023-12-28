@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Form;
 use App\Models\User;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -13,8 +14,9 @@ class DashboardController extends Controller
     }
 
     public function manage_data_students() {
-        $getDataStudents = User::with(['user_class_semesters'])->get();
-        // dd($getDataStudents);
+        $getDataStudents = User::has('user_class_semesters', '>=', 5)
+                                ->with(['user_class_semesters'])
+                                ->get();
         return view('dashboard.views.manage_data_students', [
             'data_students' => $getDataStudents
         ]);
@@ -30,6 +32,9 @@ class DashboardController extends Controller
 
     
     public function manage_setting_forms() {
-        return view('dashboard.views.manage_setting_forms');
+        $initialSettingForm = Form::get();
+        return view('dashboard.views.manage_setting_forms', [
+            'setting_forms' => $initialSettingForm
+        ]);
     }
 }
